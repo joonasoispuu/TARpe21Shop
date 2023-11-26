@@ -1,0 +1,14 @@
+{
+  "ExpandedNodes": [
+    "",
+    "\\TARpe21Shop",
+    "\\TARpe21Shop.Core",
+    "\\TARpe21Shop.Core\\Dto",
+    "\\TARpe21Shop\\Controllers",
+    "\\TARpe21Shop\\Models",
+    "\\TARpe21Shop\\Views",
+    "\\TARpe21Shop\\Views\\RealEstates"
+  ],
+  "SelectedNode": "\\TARpe21Shop\\Controllers\\SpaceshipsController.cs",
+  "PreviewInSolutionExplorer": false
+}

@@ -26,7 +26,7 @@ namespace TARpe21Shop.Core.Dto
         public string Manufacturer { get; set; } // company who manufactured the spaceship
         public bool IsSpaceshipPreviouslyOwned { get; set; } // denotes if the ship has been previously owned or not, tldr; second hand identifier.
         public int FullTripsCount { get; set; } // How many round trips has the ship taken
-        public string Type { get; set; } // bodytype, build type
+        public string? Type { get; set; } // bodytype, build type
         public int EnginePower { get; set; } // engine power in kilowatt
         public int FuelConsumptionPerDay { get; set; } // fuel consumed in a days worth of space traveled at maximum speed
         public int MaintenanceCount { get; set; } // how many maintenance sessions have been conducted on this ship

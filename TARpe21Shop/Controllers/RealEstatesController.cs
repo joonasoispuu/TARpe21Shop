@@ -3,7 +3,6 @@ using TARpe21Shop.Core.Dto;
 using TARpe21Shop.Core.ServiceInterface;
 using TARpe21Shop.Data;
 using TARpe21Shop.Models.RealEstate;
-using TARpe21Shop.Models.Spaceship;
 
 namespace TARpe21Shop.Controllers
 {
@@ -50,10 +49,11 @@ namespace TARpe21Shop.Controllers
         {
             var dto = new RealEstateDto
             {
-                Id = vm.Id,
+                Id = Guid.NewGuid(),
                 Address = vm.Address,
                 City = vm.City,
                 Country = vm.Country,
+                County = vm.County,
                 SquareMeters = vm.SquareMeters,
                 Price = vm.Price,
                 PostalCode = vm.PostalCode,
@@ -69,21 +69,18 @@ namespace TARpe21Shop.Controllers
                 DoesHaveParkingSpace = vm.DoesHaveParkingSpace,
                 DoesHavePowerGridConnection = vm.DoesHavePowerGridConnection,
                 DoesHaveWaterGridConnection = vm.DoesHaveWaterGridConnection,
-                EstateType = (Core.Dto.EstateType)vm.EstateType
+                Type = vm.Type,
+                IsPropertyNewDevelopment = vm.IsPropertyNewDevelopment,
+                IsPropertySold = vm.IsPropertySold,
+                CreatedAt = DateTime.Now,
+                ModifiedAt = DateTime.Now,
             };
-
-            var createdEntity = await _realEstates.Create(dto);
-
-            if (createdEntity != null)
+            var result = await _realEstates.Create(dto);
+            if (result == null)
             {
-                return RedirectToAction("Index");
+                return RedirectToAction(nameof(Index));
             }
-            else
-            {
-                ModelState.AddModelError("", "An error occurred while creating the real estate.");
-                return View("CreateUpdate", vm);
-            }
+            return RedirectToAction("Index", vm);
         }
-
     }
 }

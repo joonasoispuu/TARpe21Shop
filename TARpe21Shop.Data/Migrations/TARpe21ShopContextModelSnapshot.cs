@@ -89,9 +89,6 @@ namespace TARpe21Shop.Data.Migrations
                     b.Property<int?>("EstateFloor")
                         .HasColumnType("int");
 
-                    b.Property<int>("EstateType")
-                        .HasColumnType("int");
-
                     b.Property<int>("FaxNumber")
                         .HasColumnType("int");
 
@@ -125,6 +122,9 @@ namespace TARpe21Shop.Data.Migrations
 
                     b.Property<int>("SquareMeters")
                         .HasColumnType("int");
+
+                    b.Property<string>("Type")
+                        .HasColumnType("nvarchar(max)");
 
                     b.HasKey("Id");
 
