@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using TARpe21Shop.Core.Domain;
 
 namespace TARpe21Shop.Core.Domain
 {
@@ -40,6 +41,7 @@ namespace TARpe21Shop.Core.Domain
 
         public bool IsPropertyNewDevelopment { get; set; } //shows if the estate being sold is a newly developed housing unit, or an older existing one
         public bool IsPropertySold { get; set; } //shows if the property has been sold already 
+        public IEnumerable<FileToApi> FilesToApi { get; set; } = new List<FileToApi>(); //files to be added to the api
 
         //database only properties
 

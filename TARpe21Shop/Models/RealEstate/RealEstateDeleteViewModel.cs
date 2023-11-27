@@ -1,15 +1,8 @@
-﻿using Microsoft.AspNetCore.Http;
-
-namespace TARpe21Shop.Core.Dto
+﻿namespace TARpe21Shop.Models.RealEstate
 {
-    public enum EstateType
+    public class RealEstateDeleteViewModel
     {
-        House, Apartment, Room, Land, ParkingSpace, TimeShare, Garage, StorageUnit, Mansion, Castle, Station
-    }
-
-    public class RealEstateDto
-    {
-        public Guid Id { get; set; } // unique id
+        public Guid? Id { get; set; } // unique id
         public string Address { get; set; } // street name, house number, flat number.  "Tulika 14-6"
         public string? City { get; set; } //city where realestate is, city is optional incase the 
         public string Country { get; set; } //what country estate is in
@@ -37,13 +30,10 @@ namespace TARpe21Shop.Core.Dto
 
         public bool IsPropertyNewDevelopment { get; set; } //shows if the estate being sold is a newly developed housing unit, or an older existing one
         public bool IsPropertySold { get; set; } //shows if the property has been sold already 
-        public List<IFormFile> Files { get; set; }
-        public IEnumerable<FileToApiDto> FilesToApiDtos { get; set; } = new List<FileToApiDto>();
 
         //database only properties
 
         public DateTime CreatedAt { get; set; } //when entry was added to the database
         public DateTime ModifiedAt { get; set; } //when wwas entry modified in the database
-
     }
 }
