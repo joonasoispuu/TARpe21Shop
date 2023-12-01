@@ -9,6 +9,6 @@
     "\\TARpe21Shop\\Views",
     "\\TARpe21Shop\\Views\\RealEstates"
   ],
-  "SelectedNode": "\\TARpe21Shop\\Controllers\\SpaceshipsController.cs",
+  "SelectedNode": "\\TARpe21Shop.Core\\Dto\\RealEstateDto.cs",
   "PreviewInSolutionExplorer": false
 }

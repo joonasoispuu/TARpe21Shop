@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using TARpe21Shop.Data;
 
@@ -11,9 +12,10 @@ using TARpe21Shop.Data;
 namespace TARpe21Shop.Data.Migrations
 {
     [DbContext(typeof(TARpe21ShopContext))]
-    partial class TARpe21ShopContextModelSnapshot : ModelSnapshot
+    [Migration("20231201170603_add-file-adding")]
+    partial class addfileadding
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
