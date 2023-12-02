@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "7TZg4gLSOtvnBy7GlrQZerXt98ZAb55o8st9zD+tJEk=",
+  "Hash": "5Up7qmXjazpEqJbEwind7/Is/0tX2ASye3Zp8Rrz27w=",
   "Source": "TARpe21Shop",
   "BasePath": "_content/TARpe21Shop",
   "Mode": "Default",
@@ -1069,6 +1069,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\lib\\jquery-validation-unobtrusive\\LICENSE.txt"
+    },
+    {
+      "Identity": "C:\\Users\\mukim\\source\\repos\\TARpe21Shop\\TARpe21Shop\\wwwroot\\multipleFileUpload\\2afd3a8e-7ab4-42b8-ba3c-b1092bc413a3_pandoras_box_sports_gloves_bat_1630053994_786f5ded_progressive.jpg",
+      "SourceId": "TARpe21Shop",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\mukim\\source\\repos\\TARpe21Shop\\TARpe21Shop\\wwwroot\\",
+      "BasePath": "_content/TARpe21Shop",
+      "RelativePath": "multipleFileUpload/2afd3a8e-7ab4-42b8-ba3c-b1092bc413a3_pandoras_box_sports_gloves_bat_1630053994_786f5ded_progressive.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\multipleFileUpload\\2afd3a8e-7ab4-42b8-ba3c-b1092bc413a3_pandoras_box_sports_gloves_bat_1630053994_786f5ded_progressive.jpg"
     }
   ]
 }

@@ -6,9 +6,10 @@
     "\\TARpe21Shop.Core\\Dto",
     "\\TARpe21Shop\\Controllers",
     "\\TARpe21Shop\\Models",
+    "\\TARpe21Shop\\Models\\RealEstate",
     "\\TARpe21Shop\\Views",
     "\\TARpe21Shop\\Views\\RealEstates"
   ],
-  "SelectedNode": "\\TARpe21Shop.Core\\Dto\\RealEstateDto.cs",
+  "SelectedNode": "\\TARpe21Shop\\Models\\RealEstate\\RealEstateCreateUpdateViewModel.cs",
   "PreviewInSolutionExplorer": false
 }

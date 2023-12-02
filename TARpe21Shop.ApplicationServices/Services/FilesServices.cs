@@ -1,8 +1,5 @@
 ﻿using Microsoft.AspNetCore.Hosting;
 using Microsoft.EntityFrameworkCore;
-using TARpe21Shop.ApplicationServices.Services;
-using TARpe21Shop.Core.Domain;
-using TARpe21Shop.Core.Dto;
 using TARpe21Shop.Core.Domain;
 using TARpe21Shop.Core.Dto;
 using TARpe21Shop.Data;

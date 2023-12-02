@@ -1,19 +1,13 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
-using System.Diagnostics.Metrics;
-using System.Net;
-using TARpe21Shop.ApplicationServices.Services;
-using TARpe21Shop.Core.Dto;
-using TARpe21Shop.Core.ServiceInterface;
-using TARpe21Shop.Models.RealEstate;
 using TARpe21Shop.ApplicationServices.Services;
 using TARpe21Shop.Core.Dto;
 using TARpe21Shop.Core.ServiceInterface;
 using TARpe21Shop.Data;
 using TARpe21Shop.Models.RealEstate;
-using TARpe21Shop.Models.Spaceship;
+using static System.Net.Mime.MediaTypeNames;
 
-namespace TARpe21Shop.Controllers
+namespace Tarpe21Shop.Controllers
 {
     public class RealEstatesController : Controller
     {
@@ -249,6 +243,13 @@ namespace TARpe21Shop.Controllers
             {
                 return NotFound();
             }
+            var images = await _context.FilesToApi
+                .Where(x => x.RealEstateId == id)
+                .Select(y => new FileToApiViewModel
+                {
+                    FilePath = y.ExistingFilePath,
+                    ImageId = y.Id
+                }).ToArrayAsync();
 
             var vm = new RealEstateDeleteViewModel();
 
@@ -275,13 +276,14 @@ namespace TARpe21Shop.Controllers
             vm.Type = realEstate.Type;
             vm.IsPropertyNewDevelopment = realEstate.IsPropertyNewDevelopment;
             vm.IsPropertySold = realEstate.IsPropertySold;
+            vm.FileToApiViewModels.AddRange(images);
 
             return View(vm);
         }
         [HttpPost]
         public async Task<IActionResult> DeleteConfirmation(Guid id)
         {
-            var realEstate = await _realEstates.GetAsync(id);
+            var realEstate = await _realEstates.Delete(id);
             if (realEstate == null)
             {
                 return RedirectToAction(nameof(Index));

@@ -1,19 +1,11 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using TARpe21Shop.ApplicationServices.Services;
-using TARpe21Shop.Core.Domain;
-using TARpe21Shop.Core.Dto;
-using TARpe21Shop.Core.ServiceInterface;
 using TARpe21Shop.Core.Domain;
 using TARpe21Shop.Core.Dto;
 using TARpe21Shop.Core.ServiceInterface;
 using TARpe21Shop.Data;
 
-namespace TARpe21Shop.ApplicationServices.Services
+namespace Tarpe21Shop.ApplicationServices.Services
 {
     public class RealEstatesServices : IRealEstatesServices
     {
@@ -109,6 +101,7 @@ namespace TARpe21Shop.ApplicationServices.Services
             realEstate.IsPropertySold = dto.IsPropertySold;
             realEstate.CreatedAt = dto.CreatedAt;
             realEstate.ModifiedAt = DateTime.Now;
+            _filesServices.FilesToApi(dto, realEstate);
 
             _context.RealEstates.Update(realEstate);
             await _context.SaveChangesAsync();

@@ -245,6 +245,10 @@
       "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquery.min.map"
     },
     {
+      "Id": "C:\\Users\\mukim\\source\\repos\\TARpe21Shop\\TARpe21Shop\\wwwroot\\multipleFileUpload\\2afd3a8e-7ab4-42b8-ba3c-b1092bc413a3_pandoras_box_sports_gloves_bat_1630053994_786f5ded_progressive.jpg",
+      "PackagePath": "staticwebassets\\multipleFileUpload\\2afd3a8e-7ab4-42b8-ba3c-b1092bc413a3_pandoras_box_sports_gloves_bat_1630053994_786f5ded_progressive.jpg"
+    },
+    {
       "Id": "obj\\Debug\\net6.0\\staticwebassets\\msbuild.TARpe21Shop.Microsoft.AspNetCore.StaticWebAssets.props",
       "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssets.props"
     },
