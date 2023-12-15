@@ -12,8 +12,8 @@ using TARpe21Shop.Data;
 namespace TARpe21Shop.Data.Migrations
 {
     [DbContext(typeof(TARpe21ShopContext))]
-    [Migration("20231215122604_EmailServices")]
-    partial class EmailServices
+    [Migration("20231215202122_Cars")]
+    partial class Cars
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -24,10 +24,54 @@ namespace TARpe21Shop.Data.Migrations
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder, 1L, 1);
 
+            modelBuilder.Entity("TARpe21Shop.Core.Domain.Car", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<string>("Brand")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Color")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTime>("CreatedAt")
+                        .HasColumnType("datetime2");
+
+                    b.Property<bool>("IsUsed")
+                        .HasColumnType("bit");
+
+                    b.Property<int>("Mileage")
+                        .HasColumnType("int");
+
+                    b.Property<string>("Model")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTime>("ModifiedAt")
+                        .HasColumnType("datetime2");
+
+                    b.Property<decimal>("Price")
+                        .HasColumnType("decimal(18,2)");
+
+                    b.Property<int>("Year")
+                        .HasColumnType("int");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Cars");
+                });
+
             modelBuilder.Entity("TARpe21Shop.Core.Domain.FileToApi", b =>
                 {
                     b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd()
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<Guid?>("CarId")
                         .HasColumnType("uniqueidentifier");
 
                     b.Property<string>("ExistingFilePath")
@@ -38,6 +82,8 @@ namespace TARpe21Shop.Data.Migrations
                         .HasColumnType("uniqueidentifier");
 
                     b.HasKey("Id");
+
+                    b.HasIndex("CarId");
 
                     b.HasIndex("RealEstateId");
 
@@ -224,9 +270,18 @@ namespace TARpe21Shop.Data.Migrations
 
             modelBuilder.Entity("TARpe21Shop.Core.Domain.FileToApi", b =>
                 {
+                    b.HasOne("TARpe21Shop.Core.Domain.Car", null)
+                        .WithMany("FilesToApi")
+                        .HasForeignKey("CarId");
+
                     b.HasOne("TARpe21Shop.Core.Domain.RealEstate", null)
                         .WithMany("FilesToApi")
                         .HasForeignKey("RealEstateId");
+                });
+
+            modelBuilder.Entity("TARpe21Shop.Core.Domain.Car", b =>
+                {
+                    b.Navigation("FilesToApi");
                 });
 
             modelBuilder.Entity("TARpe21Shop.Core.Domain.RealEstate", b =>
