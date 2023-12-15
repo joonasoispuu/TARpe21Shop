@@ -1,0 +1,42 @@
+﻿@model IEnumerable<TARpe21Shop.Core.Dto.CarDto>
+
+@{
+    ViewData["Title"] = "Cars Index";
+}
+
+<h2>Cars</h2>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Brand</th>
+            <th>Model</th>
+            <th>Year</th>
+            <th>Mileage</th>
+            <th>Price</th>
+            <th>Color</th>
+            <th>Images</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var car in Model)
+        {
+            <tr>
+                <td>@car.Brand</td>
+                <td>@car.Model</td>
+                <td>@car.Year</td>
+                <td>@car.Mileage</td>
+                <td>@car.Price</td>
+                <td>@car.Color</td>
+                <td>
+                    @foreach (var image in car.FileToApiCarsDto)
+                    {
+                        <img src="@image.ExistingFilePath" alt="Car Image" width="100" />
+                    }
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+<a href="@Url.Action("Create", "Cars")" class="btn btn-primary">Add New Car</a>
