@@ -2,9 +2,6 @@
 using Tarpe21Shop.Core.Dto.WeatherDtos;
 using Tarpe21Shop.Core.ServiceInterface;
 using Tarpe21Shop.Models.Weather;
-using Tarpe21Shop.Core.Dto.WeatherDtos;
-using Tarpe21Shop.Core.ServiceInterface;
-using Tarpe21Shop.Models.Weather;
 
 namespace Tarpe21Shop.Controllers
 {

@@ -6,8 +6,8 @@ using System.Linq;
 using System.Net;
 using System.Text;
 using System.Threading.Tasks;
-using TARpe21Shop.Core.Dto.WeatherDtos;
-using TARpe21Shop.Core.ServiceInterface;
+using Tarpe21Shop.Core.Dto.WeatherDtos;
+using Tarpe21Shop.Core.ServiceInterface;
 
 namespace TARpe21Shop.ApplicationServices.Services
 {
