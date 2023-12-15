@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using System.Threading.Tasks;
 using Tarpe21Shop.Core.Dto.WeatherDtos;
 using Tarpe21Shop.Core.ServiceInterface;
 using Tarpe21Shop.Models.Weather;
@@ -8,6 +9,7 @@ namespace Tarpe21Shop.Controllers
     public class WeatherForecastsController : Controller
     {
         private readonly IWeatherForecastsServices _weatherForecastServices;
+
         public WeatherForecastsController(IWeatherForecastsServices weatherForecastServices)
         {
             _weatherForecastServices = weatherForecastServices;
@@ -15,58 +17,39 @@ namespace Tarpe21Shop.Controllers
 
         public IActionResult Index()
         {
-            WeatherViewModel vm = new WeatherViewModel();
-            return View(vm);
+            return View();
         }
 
         [HttpPost]
-        public IActionResult ShowWeather()
+        public async Task<IActionResult> ShowWeather()
         {
-            if (ModelState.IsValid)
+            var dto = new WeatherResultDto();
+            await _weatherForecastServices.WeatherDetail(dto);
+            var vm = new WeatherViewModel();
+
+            foreach (var entry in dto.ForecastEntries)
             {
-                return RedirectToAction("City", "WeatherForecasts");
+                vm.ForecastEntries.Add(new ForecastEntry
+                {
+                    Date = entry.Date,
+                    Description = entry.Description,
+                    Temperature = entry.Temperature,
+                    FeelsLike = entry.FeelsLike,
+                    TempMin = entry.TempMin,
+                    TempMax = entry.TempMax,
+                    Humidity = entry.Humidity,
+                    WindSpeed = entry.WindSpeed,
+                    Icon = entry.Icon
+                });
             }
-            return View();
+
+            return View("City", vm);
         }
+
         [HttpGet]
         public IActionResult City()
         {
-            WeatherResultDto dto = new();
-
-            _weatherForecastServices.WeatherDetail(dto);
-
-            WeatherViewModel vm = new();
-
-            vm.Date = dto.EffectiveDate;
-            vm.EpochDate = dto.EffectiveEpochDate;
-            vm.Severity = dto.Severity;
-            vm.Text = dto.Text;
-            vm.MobileLink = dto.MobileLink;
-            vm.Link = dto.Link;
-            vm.Category = dto.Category;
-
-            vm.TempMinValue = dto.TempMinValue;
-            vm.TempMinUnit = dto.TempMinUnit;
-            vm.TempMinUnitType = dto.TempMinUnitType;
-
-            vm.TempMaxValue = dto.TempMaxValue;
-            vm.TempMaxUnit = dto.TempMaxUnit;
-            vm.TempMaxUnitType = dto.TempMaxUnitType;
-
-            vm.DayIcon = dto.DayIcon;
-            vm.DayIconPhrase = dto.DayIconPhrase;
-            vm.DayHasPrecipitation = dto.DayHasPrecipitation;
-            vm.DayPrecipitationType = dto.DayPrecipitationType;
-            vm.DayPrecipitationIntensity = dto.DayPrecipitationIntensity;
-
-            vm.NightIcon = dto.NightIcon;
-            vm.NightIconPhrase = dto.NightIconPhrase;
-            vm.NightHasPrecipitation = dto.NightHasPrecipitation;
-            vm.NightPrecipitationType = dto.NightPrecipitationType;
-            vm.NightPrecipitationIntensity = dto.NightPrecipitationIntensity;
-
-            return View(vm);
-
+            return RedirectToAction("Index");
         }
     }
 }

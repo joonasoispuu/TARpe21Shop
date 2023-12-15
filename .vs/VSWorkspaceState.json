@@ -4,14 +4,12 @@
     "\\TARpe21Shop",
     "\\TARpe21Shop.ApplicationServices",
     "\\TARpe21Shop.ApplicationServices\\Services",
-    "\\TARpe21Shop.Core\\Dto",
-    "\\TARpe21Shop.Core\\Dto\\WeatherDtos",
     "\\TARpe21Shop.SpaceShipTest",
     "\\TARpe21Shop.SpaceShipTest\\Macros",
     "\\TARpe21Shop.SpaceShipTest\\Mock",
     "\\TARpe21Shop\\Views",
     "\\TARpe21Shop\\Views\\RealEstates"
   ],
-  "SelectedNode": "\\TARpe21Shop\\TARpe21Shop.csproj.user",
+  "SelectedNode": "\\TARpe21Shop.sln",
   "PreviewInSolutionExplorer": false
 }
