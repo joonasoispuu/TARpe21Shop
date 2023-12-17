@@ -1,6 +1,7 @@
 using Microsoft.EntityFrameworkCore;
 using Tarpe21Shop.ApplicationServices.Services;
 using TARpe21Shop.ApplicationServices.Services;
+using TARpe21Shop.Core.Dto.ServiceInterface;
 using TARpe21Shop.Core.ServiceInterface;
 using TARpe21Shop.Data;
 
@@ -14,6 +15,7 @@ builder.Services.AddScoped<IFilesServices, FilesServices>();
 builder.Services.AddScoped<IRealEstatesServices, RealEstatesServices>();
 builder.Services.AddScoped<Tarpe21Shop.Core.ServiceInterface.IWeatherForecastsServices, WeatherForecastsServices>();
 builder.Services.AddScoped<IEmailService, EmailService>();
+builder.Services.AddScoped<ICarService, CarService>();
 
 
 var app = builder.Build();
