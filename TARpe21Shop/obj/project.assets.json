@@ -12361,11 +12361,11 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "projectReferences": {
-            "C:\\Users\\mukim\\source\\repos\\TARpe21Shop\\Tarpe21Shop.ApplicationServices\\Tarpe21Shop.ApplicationServices.csproj": {
-              "projectPath": "C:\\Users\\mukim\\source\\repos\\TARpe21Shop\\Tarpe21Shop.ApplicationServices\\Tarpe21Shop.ApplicationServices.csproj"
+            "C:\\Users\\mukim\\source\\repos\\TARpe21Shop\\TARpe21Shop.ApplicationServices\\TARpe21Shop.ApplicationServices.csproj": {
+              "projectPath": "C:\\Users\\mukim\\source\\repos\\TARpe21Shop\\TARpe21Shop.ApplicationServices\\TARpe21Shop.ApplicationServices.csproj"
             },
-            "C:\\Users\\mukim\\source\\repos\\TARpe21Shop\\Tarpe21Shop.Data\\Tarpe21Shop.Data.csproj": {
-              "projectPath": "C:\\Users\\mukim\\source\\repos\\TARpe21Shop\\Tarpe21Shop.Data\\Tarpe21Shop.Data.csproj"
+            "C:\\Users\\mukim\\source\\repos\\TARpe21Shop\\TARpe21Shop.Data\\TARpe21Shop.Data.csproj": {
+              "projectPath": "C:\\Users\\mukim\\source\\repos\\TARpe21Shop\\TARpe21Shop.Data\\TARpe21Shop.Data.csproj"
             }
           }
         }
