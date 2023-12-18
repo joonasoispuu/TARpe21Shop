@@ -110,6 +110,28 @@ namespace TARpe21Shop.Data.Migrations
                     b.ToTable("FilesToDatabase");
                 });
 
+            modelBuilder.Entity("TARpe21Shop.Core.Domain.FileToDatabaseCar", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<Guid?>("CarId")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<byte[]>("ImageData")
+                        .IsRequired()
+                        .HasColumnType("varbinary(max)");
+
+                    b.Property<string>("ImageTitle")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("FilesToDatabaseCar");
+                });
+
             modelBuilder.Entity("TARpe21Shop.Core.Domain.RealEstate", b =>
                 {
                     b.Property<Guid>("Id")

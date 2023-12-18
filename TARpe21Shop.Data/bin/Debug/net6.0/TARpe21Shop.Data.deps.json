@@ -6,7 +6,7 @@
   "compilationOptions": {},
   "targets": {
     ".NETCoreApp,Version=v6.0": {
-      "TARpe21Shop.Data/1.0.0": {
+      "Tarpe21Shop.Data/1.0.0": {
         "dependencies": {
           "Microsoft.EntityFrameworkCore": "6.0.22",
           "Microsoft.EntityFrameworkCore.Design": "6.0.22",
@@ -15,7 +15,7 @@
           "TARpe21Shop.Core": "1.0.0"
         },
         "runtime": {
-          "TARpe21Shop.Data.dll": {}
+          "Tarpe21Shop.Data.dll": {}
         }
       },
       "Humanizer.Core/2.8.26": {
@@ -584,7 +584,7 @@
     }
   },
   "libraries": {
-    "TARpe21Shop.Data/1.0.0": {
+    "Tarpe21Shop.Data/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

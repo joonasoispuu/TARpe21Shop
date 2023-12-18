@@ -3,8 +3,8 @@ C:\Users\mukim\source\repos\TARpe21Shop\TARpe21Shop.ApplicationServices\bin\Debu
 C:\Users\mukim\source\repos\TARpe21Shop\TARpe21Shop.ApplicationServices\bin\Debug\net6.0\TARpe21Shop.ApplicationServices.dll
 C:\Users\mukim\source\repos\TARpe21Shop\TARpe21Shop.ApplicationServices\bin\Debug\net6.0\TARpe21Shop.ApplicationServices.pdb
 C:\Users\mukim\source\repos\TARpe21Shop\TARpe21Shop.ApplicationServices\bin\Debug\net6.0\TARpe21Shop.Core.dll
-C:\Users\mukim\source\repos\TARpe21Shop\TARpe21Shop.ApplicationServices\bin\Debug\net6.0\TARpe21Shop.Data.dll
-C:\Users\mukim\source\repos\TARpe21Shop\TARpe21Shop.ApplicationServices\bin\Debug\net6.0\TARpe21Shop.Data.pdb
+C:\Users\mukim\source\repos\TARpe21Shop\TARpe21Shop.ApplicationServices\bin\Debug\net6.0\Tarpe21Shop.Data.dll
+C:\Users\mukim\source\repos\TARpe21Shop\TARpe21Shop.ApplicationServices\bin\Debug\net6.0\Tarpe21Shop.Data.pdb
 C:\Users\mukim\source\repos\TARpe21Shop\TARpe21Shop.ApplicationServices\bin\Debug\net6.0\TARpe21Shop.Core.pdb
 C:\Users\mukim\source\repos\TARpe21Shop\TARpe21Shop.ApplicationServices\obj\Debug\net6.0\TARpe21Shop.ApplicationServices.csproj.AssemblyReference.cache
 C:\Users\mukim\source\repos\TARpe21Shop\TARpe21Shop.ApplicationServices\obj\Debug\net6.0\TARpe21Shop.ApplicationServices.GeneratedMSBuildEditorConfig.editorconfig
