@@ -9,6 +9,7 @@ namespace TARpe21Shop.Core.ServiceInterface
     {
         Task<Car> Create(CarDto dto);
         Task<Car> Update(CarDto dto);
+        Task<Car> Delete(Guid Id);
         Task<Car> GetAsync(Guid id);
     }
 }

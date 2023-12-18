@@ -74,5 +74,26 @@ namespace TARpe21Shop.ApplicationServices.Services
             var result = await _context.Cars.FirstOrDefaultAsync(x => x.Id == id);
             return result;
         }
+
+        public async Task<Car> Delete(Guid id)
+        {
+            var car = await _context.Cars.FirstOrDefaultAsync(x => x.Id == id);
+
+            var images = await _context.FilesToDatabaseCar
+                .Where(x => x.CarId == id)
+                .Select(y => new FileToDatabaseDtoCars
+                {
+                    Id = y.Id,
+                    ImageTitle = y.ImageTitle,
+                    CarId = y.CarId
+                })
+                .ToArrayAsync();
+
+            _context.Cars.Remove(car);
+            await _context.SaveChangesAsync();
+
+            return car;
+        }
+
     }
 }

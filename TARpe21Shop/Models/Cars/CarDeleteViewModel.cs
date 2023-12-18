@@ -1,5 +1,4 @@
 ﻿using TARpe21Shop.Models.Cars;
-using TARpe21Shop.Models.RealEstate;
 
 namespace TARpe21Shop.Models.Car
 {

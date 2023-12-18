@@ -191,35 +191,46 @@ namespace TARpe21Shop.Controllers
         public async Task<IActionResult> Delete(Guid id)
         {
             var car = await _carsServices.GetAsync(id);
+
             if (car == null)
             {
                 return NotFound();
             }
+
             var photos = await _context.FilesToDatabaseCar
-                .Where(x => x.CarId == id)
-                .Select(y => new ImageViewModel
-                {
-                    CarId = y.Id,
-                    ImageId = y.Id,
-                    ImageData = y.ImageData,
-                    ImageTitle = y.ImageTitle,
-                    Image = string.Format("data:image/gif;base64,{0}", Convert.ToBase64String(y.ImageData))
-                }).ToArrayAsync();
-            var vm = new CarDeleteViewModel
-            {
-                Id = car.Id,
-                Brand = car.Brand,
-                Model = car.Model,
-                Year = car.Year,
-                Mileage = car.Mileage,
-                Price = car.Price,
-                Color = car.Color,
-                IsUsed = car.IsUsed,
-                CreatedAt = car.CreatedAt,
-                ModifiedAt = car.ModifiedAt,
-                Image = photos.ToList()
-            };
+               .Where(x => x.CarId == id)
+               .Select(y => new ImageViewModel
+               {
+                   CarId = y.Id,
+                   ImageId = y.Id,
+                   ImageData = y.ImageData,
+                   ImageTitle = y.ImageTitle,
+                   Image = string.Format("data:image/gif;base64,{0}", Convert.ToBase64String(y.ImageData))
+               }).ToArrayAsync();
+            var vm = new CarDeleteViewModel();
+            vm.Id = car.Id;
+            vm.Brand = car.Brand;
+            vm.Model = car.Model;
+            vm.Year = car.Year;
+            vm.Mileage = car.Mileage;
+            vm.Price = car.Price;
+            vm.Color = car.Color;
+            vm.IsUsed = car.IsUsed;
+            vm.CreatedAt = car.CreatedAt;
+            vm.ModifiedAt = car.ModifiedAt;
+            vm.Image.AddRange(photos);
             return View(vm);
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> DeleteConfirmation(Guid Id)
+        {
+            var carId = await _carsServices.Delete(Id);
+            if (carId == null)
+            {
+                return RedirectToAction(nameof(Index));
+            }
+            return RedirectToAction(nameof(Index));
         }
     }
 }
