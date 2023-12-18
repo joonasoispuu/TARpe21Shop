@@ -78,6 +78,37 @@ namespace TARpe21Shop.SpaceshipTest
             Assert.NotEqual(spaceship.PassengerCount, dto.PassengerCount);
         }
 
+        [Fact]
+        public async Task Should_DeleteByIdSpaceship_WhenDeleteSpaceship()
+        {
+            SpaceshipDto dto = MockSpaceshipData();
+            var spaceship = await Svc<ISpaceshipsServices>().Create(dto);
+            var result = await Svc<ISpaceshipsServices>().Delete((Guid)spaceship.Id);
+
+            Assert.Equal(result, spaceship);
+        }
+
+        [Fact]
+        public async Task ShouldNot_UpdateSpaceship_WhenNotUpdateData()
+        {
+            SpaceshipDto update = MockSpaceshipData();
+            var result = await Svc<ISpaceshipsServices>().Update(update);
+
+            Assert.NotEqual(result.Id, update.Id);
+        }
+
+        [Fact]
+        public async Task ShouldNot_DeleteByIdSpaceship_WhenDidNotDeleteSpaceship()
+        {
+            SpaceshipDto dto = MockSpaceshipData();
+            var spaceship = await Svc<ISpaceshipsServices>().Create(dto);
+            var spaceship2 = await Svc<ISpaceshipsServices>().Create(dto);
+
+            var result = await Svc<ISpaceshipsServices>().Delete((Guid)spaceship2.Id);
+
+            Assert.NotEqual(result, spaceship);
+        }
+
         private SpaceshipDto MockSpaceshipData()
         {
             SpaceshipDto spaceship = new()
@@ -103,16 +134,5 @@ namespace TARpe21Shop.SpaceshipTest
             };
             return spaceship;
         }
-        //[Fact]
-        //public async Task Should_DeleteByIdSpaceship_WhenDeleteSpaceship()
-        //{
-
-        //}
-
-        //[Fact]
-        //public async Task ShouldNot_UpdateSpaceship_WhenNotUpdateData()
-        //{
-
-        //}
     }
 }
