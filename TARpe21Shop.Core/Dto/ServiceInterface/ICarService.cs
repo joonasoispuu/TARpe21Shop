@@ -1,11 +1,14 @@
-﻿namespace TARpe21Shop.Core.Dto.ServiceInterface
+﻿using System;
+using System.Threading.Tasks;
+using TARpe21Shop.Core.Domain;
+using TARpe21Shop.Core.Dto;
+
+namespace TARpe21Shop.Core.ServiceInterface
 {
     public interface ICarService
     {
-        Task<IEnumerable<CarDto>> GetAllCarsAsync();
-        Task<CarDto> GetCarByIdAsync(Guid id);
-        Task<CarDto> CreateCarAsync(CarDto carDto);
-        Task UpdateCarAsync(Guid id, CarDto carDto);
-        Task DeleteCarAsync(Guid id);
+        Task<Car> Create(CarDto dto);
+        Task<Car> Update(CarDto dto);
+        Task<Car> GetAsync(Guid id);
     }
 }

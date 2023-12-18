@@ -1,0 +1,112 @@
+﻿@model TARpe21Shop.Models.Cars.CarCreateUpdateViewModel
+
+@if (Model.Id != Guid.Empty)
+{
+    <h1>Update Car</h1>
+}
+else
+{
+    <h1>Add New Car</h1>
+}
+
+<div>
+    <form method="post" enctype="multipart/form-data">
+        <input asp-for="Id" type="hidden" />
+        <input asp-for="CreatedAt" type="hidden" />
+        <input asp-for="ModifiedAt" type="hidden" />
+
+        <div class="form-group row">
+            <label asp-for="Brand" class="col-sm-2 col-form-label"></label>
+            <div class="col-sm-10">
+                <input asp-for="Brand" class="form-control"/>
+            </div>
+        </div>
+
+        <div class="form-group row">
+            <label asp-for="Model" class="col-sm-2 col-form-label"></label>
+            <div class="col-sm-10">
+                <input asp-for="Model" class="form-control" />
+            </div>
+        </div>
+
+        <div class="form-group row">
+            <label asp-for="Year" class="col-sm-2 col-form-label"></label>
+            <div class="col-sm-10">
+                <input asp-for="Year" class="form-control" />
+            </div>
+        </div>
+
+        <div class="form-group row">
+            <label asp-for="Mileage" class="col-sm-2 col-form-label"></label>
+            <div class="col-sm-10">
+                <input asp-for="Mileage" class="form-control" />
+            </div>
+        </div>
+
+        <div class="form-group row">
+            <label asp-for="Price" class="col-sm-2 col-form-label"></label>
+            <div class="col-sm-10">
+                <input asp-for="Price" class="form-control" />
+            </div>
+        </div>
+
+        <div class="form-group row">
+            <label asp-for="Color" class="col-sm-2 col-form-label"></label>
+            <div class="col-sm-10">
+                <input asp-for="Color" class="form-control" />
+            </div>
+        </div>
+
+        <div class="form-group row">
+            <label asp-for="IsUsed" class="col-sm-2 col-form-label"></label>
+            <div class="col-sm-10">
+                <input asp-for="IsUsed" class="form-check-input" />
+            </div>
+        </div>
+
+        <div class="form-group row">
+            <label asp-for="Files" class="col-sm-2 col-form-label"></label>
+            <div class="col-sm-5">
+                <div class="custom-file">
+                    <input class="form-control custom-file-input" asp-for="Files" multiple type="file"/>
+                    <label class="custom-file-label">Choose File...</label>
+                </div>
+            </div>
+        </div>
+
+        @foreach (var image in Model.Image)
+        {
+            <div>
+                <img src="@($"data:image/gif;base64,{Convert.ToBase64String(image.ImageData)}")" alt="Car Image" style="max-width: 100px; max-height: 100px;" />
+                <input asp-action="RemoveImage" asp-controller="Cars" asp-route-imageId="@image.ImageId" type="submit" class="btn btn-danger" value="Remove Image"/>
+            </div>
+        }
+
+        @if (Model.Id != Guid.Empty)
+        {
+            <input asp-action="Update" asp-controller="Cars" type="submit" class="btn btn-primary" value="Update" />
+        }
+        else
+        {
+            <input asp-action="Create" asp-controller="Cars" type="submit" class="btn btn-primary" value="Create" />
+        }
+        <a asp-action="Index" asp-controller="Cars" class="btn btn-secondary">Cancel</a>
+    </form>
+</div>
+@section Scripts
+{
+    <script>
+        $(document).ready(function(){
+            $('.custom-file-input').on("change", function(){
+                var fileLabel = $(this).next('.custom-file-label');
+                var files = $(this)[0].files;
+                if(files.length > 1){
+                    fileLabel.html(files.length + ' files selected');
+                }
+                else if(files.length == 1) {
+                    fileLabel.html(files[0].name);
+                }
+            });
+        });
+    </script>
+}

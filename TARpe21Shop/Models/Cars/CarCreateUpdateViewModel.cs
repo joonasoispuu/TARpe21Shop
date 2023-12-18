@@ -13,6 +13,8 @@ namespace TARpe21Shop.Models.Cars
         public string Color { get; set; }
         public bool IsUsed { get; set; }
         public List<IFormFile> Files { get; set; }
-        public IEnumerable<FileToApiCarsDto> FileToApiCarsDto { get; set; } = new List<FileToApiCarsDto>();
+        public List<ImageViewModel> Image { get; set; } = new List<ImageViewModel>();
+        public DateTime CreatedAt { get; set; }
+        public DateTime ModifiedAt { get; set; }
     }
 }

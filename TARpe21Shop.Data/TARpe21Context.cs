@@ -13,5 +13,6 @@ namespace TARpe21Shop.Data
         public DbSet<RealEstate> RealEstates { get; set; }
         public DbSet<FileToApi> FilesToApi { get; set; }
         public DbSet<Car> Cars { get; set; }
+        public DbSet<FileToDatabaseCar> FilesToDatabaseCar { get; set; }
     }
 }

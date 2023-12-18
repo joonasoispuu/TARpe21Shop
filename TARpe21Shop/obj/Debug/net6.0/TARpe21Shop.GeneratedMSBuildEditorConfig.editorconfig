@@ -16,8 +16,12 @@ build_property.GenerateRazorMetadataSourceChecksumAttributes =
 build_property.MSBuildProjectDirectory = C:\Users\mukim\source\repos\TARpe21Shop\TARpe21Shop
 build_property._RazorSourceGeneratorDebug = 
 
-[C:/Users/mukim/source/repos/TARpe21Shop/TARpe21Shop/Views/Cars/Create.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2Fyc1xDcmVhdGUuY3NodG1s
+[C:/Users/mukim/source/repos/TARpe21Shop/TARpe21Shop/Views/Cars/CreateUpdate.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2Fyc1xDcmVhdGVVcGRhdGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/mukim/source/repos/TARpe21Shop/TARpe21Shop/Views/Cars/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2Fyc1xEZXRhaWxzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/mukim/source/repos/TARpe21Shop/TARpe21Shop/Views/Cars/Index.cshtml]

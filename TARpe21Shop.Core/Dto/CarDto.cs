@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Http;
+using TARpe21Shop.Core.Domain;
 
 namespace TARpe21Shop.Core.Dto
 {
@@ -13,10 +14,9 @@ namespace TARpe21Shop.Core.Dto
         public string Color { get; set; }
         public bool IsUsed { get; set; }
 
+        public List<IFormFile> Files { get; set; }
+        public IEnumerable<FileToDatabaseCar> Image { get; set; } = new List<FileToDatabaseCar>();
         public DateTime CreatedAt { get; set; }
         public DateTime ModifiedAt { get; set; }
-
-        public List<IFormFile> Files { get; set; }
-        public IEnumerable<FileToApiCarsDto> FileToApiCarsDto { get; set; } = new List<FileToApiCarsDto>();
     }
 }

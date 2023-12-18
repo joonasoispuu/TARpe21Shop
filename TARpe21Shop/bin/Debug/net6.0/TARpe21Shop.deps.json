@@ -2945,7 +2945,7 @@
           "TARpe21Shop.Data": "1.0.0"
         },
         "runtime": {
-          "TARpe21Shop.ApplicationServices.dll": {}
+          "Tarpe21Shop.ApplicationServices.dll": {}
         }
       },
       "TARpe21Shop.Core/1.0.0": {
@@ -2964,7 +2964,7 @@
           "TARpe21Shop.Core": "1.0.0"
         },
         "runtime": {
-          "TARpe21Shop.Data.dll": {}
+          "Tarpe21Shop.Data.dll": {}
         }
       }
     }

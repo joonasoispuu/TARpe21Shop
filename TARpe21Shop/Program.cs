@@ -1,7 +1,7 @@
+using Microsoft.AspNetCore.Cors.Infrastructure;
 using Microsoft.EntityFrameworkCore;
 using Tarpe21Shop.ApplicationServices.Services;
 using TARpe21Shop.ApplicationServices.Services;
-using TARpe21Shop.Core.Dto.ServiceInterface;
 using TARpe21Shop.Core.ServiceInterface;
 using TARpe21Shop.Data;
 
@@ -12,10 +12,12 @@ builder.Services.AddControllersWithViews();
 builder.Services.AddDbContext<TARpe21ShopContext>(options => options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
 builder.Services.AddScoped<ISpaceshipsServices, SpaceshipsServices>();
 builder.Services.AddScoped<IFilesServices, FilesServices>();
+builder.Services.AddScoped<IFilesServicesCar, FilesServicesCar>();
 builder.Services.AddScoped<IRealEstatesServices, RealEstatesServices>();
 builder.Services.AddScoped<Tarpe21Shop.Core.ServiceInterface.IWeatherForecastsServices, WeatherForecastsServices>();
 builder.Services.AddScoped<IEmailService, EmailService>();
-builder.Services.AddScoped<ICarService, CarService>();
+builder.Services.AddScoped<ICarService, CarsServices>();
+
 
 
 var app = builder.Build();
